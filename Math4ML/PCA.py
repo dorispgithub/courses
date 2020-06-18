@@ -35,12 +35,11 @@ def normalize(X):
         will be NaN. Handle this by setting using `std = 1` for those 
         dimensions when doing normalization.
     """
-    mu = np.mean(X, axis=0) # <-- EDIT THIS, compute the mean of X
+    mu = np.mean(X, axis=0) # compute the mean of X
     std = np.std(X, axis=0)
-    std_filled = std.copy()
-    std_filled[std==0] = 1.
-    Xbar = (X-mu)/std_filled                  # <-- EDIT THIS, compute the normalized data Xbar
-    return Xbar, mu, std_filled
+    std[std==0] = 1
+    Xbar = (X-mu)/std                  # compute the normalized data Xbar
+    return Xbar, mu, std
 
 def eig(S):
     """Compute the eigenvalues and corresponding eigenvectors 

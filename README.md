@@ -1,3 +1,3 @@
 # courses
 
-useful examples 
+useful examples from various courses
